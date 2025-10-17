@@ -13,8 +13,8 @@ const App = () => {
   ])
 
   const deleteData = (id) => {
-    let newList = todoList.filter((item) => item.id !== id)
-    setTodoList(newList)
+    let newTodo = todoList.filter((item) => item.id !== id)
+    setTodoList(newTodo)
     console.log(todoList)
   }
 

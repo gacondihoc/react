@@ -8,16 +8,9 @@ import TodoNew from './components/todo/TodoNew'
 const App = () => {
 
   const [todoList, setTodoList] = useState([
-    { id: 1, name: "Learning React" },
-    { id: 2, name: "Watching Youtube" }
+    // { id: 1, name: "Learning React" },
+    // { id: 2, name: "Watching Youtube" }
   ])
-
-  const hoidanit = "Eric";
-  const age = 25;
-  const data = {
-    address: "hanoi",
-    country: "vietnam"
-  }
   const addNewTodo = (name) => {
     const newTodo = {
       id: randomIntFromInterval(1, 10000000),
@@ -38,11 +31,6 @@ const App = () => {
         addNewTodo={addNewTodo}
       />
       <TodoData
-        name={hoidanit}
-        age={age}
-        address={data.address}
-        country={data.country}
-        data={data}
         todoList={todoList}
 
       />

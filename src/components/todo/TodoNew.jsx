@@ -7,36 +7,30 @@ const TodoNew = (props) => {
     //ueState hook
     // const valueInput = "eric";
 
-    const [valueInput, setValueInput] = useState("")
-    const [num, setNum] = useState(0)
+    const [valueInput, setValueInput] = useState("eric")
 
 
     const handleClick = () => {
         // alert("click me")
-        setNum(num + 1)
         addNewTodo(valueInput)
+        setValueInput("")
     }
     const handleOnChange = (name) => {
         setValueInput(name)
 
     }
-    const reNum = () => {
-        setNum(0)
-    }
 
     return (
         <div className="todo-new">
-            <input type="text"
+            <input
+                value={valueInput}
+                type="text"
                 onChange={(event) => handleOnChange(event.target.value)}
             />
             <button style={{ cursor: "pointer" }}
                 onClick={handleClick}
             >Add</button>
-            <button style={{ cursor: "pointer" }}
-                onClick={reNum}
-            >return Num</button>
             <div>My text input = {valueInput} </div>
-            <div>{num} </div>
         </div>
     )
 }

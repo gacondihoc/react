@@ -11,6 +11,13 @@ const App = () => {
     // { id: 1, name: "Learning React" },
     // { id: 2, name: "Watching Youtube" }
   ])
+
+  const deleteData = (id) => {
+    let newList = todoList.filter((item) => item.id !== id)
+    setTodoList(newList)
+    console.log(todoList)
+  }
+
   const addNewTodo = (name) => {
     const newTodo = {
       id: randomIntFromInterval(1, 10000000),
@@ -34,6 +41,7 @@ const App = () => {
       {todoList.length > 0 ?
         <TodoData
           todoList={todoList}
+          deleteData={deleteData}
         />
         :
         <div className="todo-image">

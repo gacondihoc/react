@@ -3,16 +3,16 @@
 const TodoData = (props) => {
     //props is a object
     // object destructing
-    const { todoList } = props;
+    const { todoList, deleteData } = props;
     console.log(">>>> chekc props: ", todoList)
+
     return (
         <div className='todo-data'>
             {todoList.map((item, index) => {
                 return (
                     <div className={`todo-item`} key={item.id}>
                         <div>{item.name}</div>
-                        <button>Delete</button>
-
+                        <button onClick={() => { deleteData(item.id) }}>Delete</button>
                     </div>
                 )
             })}

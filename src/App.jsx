@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import Footer from './components/layout/footer'
+import Header from './components/layout/header'
 import './components/todo/todo.css'
 import TodoData from './components/todo/TodoData'
 import TodoNew from './components/todo/TodoNew'
@@ -32,23 +34,27 @@ const App = () => {
 
 
   return (
-    <div className="todo-container">
-      <div className="todo-title">Todo List</div>
-      <TodoNew
-        addNewTodo={addNewTodo}
-      />
-
-      {todoList.length > 0 ?
-        <TodoData
-          todoList={todoList}
-          deleteData={deleteData}
+    <>
+      <Header />
+      <div className="todo-container">
+        <div className="todo-title">Todo List</div>
+        <TodoNew
+          addNewTodo={addNewTodo}
         />
-        :
-        <div className="todo-image">
-          <img src={reactLogo} alt="reactLogo" className='logo' />
-        </div>
-      }
-    </div>
+
+        {todoList.length > 0 ?
+          <TodoData
+            todoList={todoList}
+            deleteData={deleteData}
+          />
+          :
+          <div className="todo-image">
+            <img src={reactLogo} alt="reactLogo" className='logo' />
+          </div>
+        }
+      </div>
+      <Footer />
+    </>
 
     /* {todoList.length > 0 &&
       <>

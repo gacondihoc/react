@@ -9,13 +9,23 @@ import LoginPage from './pages/login';
 import ProductsPage from './pages/products';
 import RegisterPage from './pages/register';
 import UsersPage from './pages/users';
-import './styles/global.css'
+import './styles/global.css';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/users",
+        element: <UsersPage />
+      },
+      {
+        path: "/products",
+        element: <ProductsPage />
+      }
+    ]
   },
   {
     path: "/login",
@@ -25,15 +35,6 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPage />
-  }
-  ,
-  {
-    path: "/users",
-    element: <UsersPage />
-  },
-  {
-    path: "/products",
-    element: <ProductsPage />
   }
 ]);
 

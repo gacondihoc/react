@@ -3,9 +3,7 @@ import { useEffect, useState } from 'react';
 import { fetchAllUserAPI } from '../../services/api.service';
 
 const UserTable = () => {
-    const [dataUsers, setDataUsers] = useState([
-
-    ]);
+    const [dataUsers, setDataUsers] = useState([]);
 
     useEffect(() => {
         loadUser()
